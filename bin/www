@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+var app = require('../app');
+var logger = require('../config/logger');
+var sockets = require('../config/sockets');
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+  logger.info('Express server listening on port ' + server.address().port);
+});
+var io = require('socket.io').listen(server);
+sockets(io);
+
+//var spark = require('spark');
+//spark.login({ username: 'connorwarnock@gmail.com', password: 'uSaltaiagffa0---' })
+//.then(function() {
+//  var deviceId = '2b001e000647343232363230';
+//  // for each of the plants in the database, listen to stream
+//  // publish to room when new data comes in.
+//  spark.getDevice(deviceId, function(err, device) {
+//    console.log('Device name: ' + device.name);
+//    device.subscribe('moisture', function(data) {
+//      io.to('plants').emit('data', { data: data });
+//      //console.log(data);
+//    });
+//  });
+//});

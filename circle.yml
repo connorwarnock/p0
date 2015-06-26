@@ -1,0 +1,8 @@
+database:
+  override:
+    - mv knexfile.example.js knexfile.js
+    - knex migrate:latest --env=test
+dependencies:
+  override:
+    - npm install
+    - npm install knex -g

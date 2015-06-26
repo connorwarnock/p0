@@ -1,0 +1,4 @@
+knexfile.js
+tasks/bootstrap.json
+node_modules
+**/*.log
