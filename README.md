@@ -17,6 +17,11 @@ To run the app locally
 
         cp knexfile.example.js knexfile.js
 
+0. Create your own secrets.json and add in your access token from
+   particle.io
+
+        cp config/secrets.example.json config/secrets.json
+
 0. Run the database migrations
 
         knex migrate:lastest

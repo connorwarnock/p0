@@ -1,6 +1,8 @@
 var bookshelf = require('../config/bookshelf.js'),
     logger = require('../config/logger'),
-    _ = require('lodash');
+    _ = require('lodash'),
+    tk = require('../config/secrets.json'),
+    particleioAccessToken = require('../config/secrets.json')[process.env.NODE_ENV]['particleio_access_token'];
 
 module.exports = model =  bookshelf.model('Plant', {
   tableName: "plants",
@@ -19,7 +21,7 @@ module.exports = model =  bookshelf.model('Plant', {
   listenForVitals: function() {
     var _this = this;
     var spark = require('spark');
-    spark.login({ username: 'particleiousername', password: 'particleiopassword' })
+    spark.login({ accessToken: particleioAccessToken })
     .then(function(token) {
       spark.getDevice(_this.get('particleDeviceId'), function(err, device) {
         device.subscribe('moisture', function(payload) {

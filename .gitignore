@@ -1,3 +1,4 @@
 knexfile.js
+config/secrets.json
 tasks/bootstrap.json
 node_modules
