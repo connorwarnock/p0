@@ -2,6 +2,8 @@
 
 [![Circle CI](https://circleci.com/gh/connorwarnock/p0/tree/master.svg?style=svg)](https://circleci.com/gh/connorwarnock/p0/tree/master)
 
+[![Code Climate](https://codeclimate.com/github/connorwarnock/p0/badges/gpa.svg)](https://codeclimate.com/github/connorwarnock/p0)
+
 This is a simple Socket.io based event server that stores and streams data from Particle.io sse's.
 
 ## Getting setup
