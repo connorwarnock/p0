@@ -1,7 +1,6 @@
 var express = require('express');
 var fs = require('fs');
 
-process.env.NODE_ENV = typeof process.env.NODE_ENV != 'undefined' || 'development';
 var app = module.exports = express();
 
 var bookshelf = require('./config/bookshelf');

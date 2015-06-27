@@ -1,8 +1,6 @@
 var app = require('../app'),
-    Bookshelf = require('bookshelf');
-
-var dbConnection = require('../knexfile.js')[app.get('env')];
-
+    Bookshelf = require('bookshelf'),
+    dbConnection = require('../knexfile.js')[app.get('env')];
 
 var knex = require('knex')({
   client: dbConnection['client'],

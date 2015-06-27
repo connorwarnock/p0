@@ -1,8 +1,9 @@
 var bookshelf = require('../config/bookshelf.js'),
+    app = require('../app'),
     logger = require('../config/logger'),
     _ = require('lodash'),
     tk = require('../config/secrets.json'),
-    particleioAccessToken = require('../config/secrets.json')[process.env.NODE_ENV]['particleio_access_token'];
+    particleioAccessToken = require('../config/secrets.json')[app.get('env')]['particleio_access_token'];
 
 module.exports = model =  bookshelf.model('Plant', {
   tableName: "plants",
