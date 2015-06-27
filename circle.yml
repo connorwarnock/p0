@@ -2,6 +2,9 @@ database:
   override:
     - mv knexfile.example.js knexfile.js
     - knex migrate:latest --env=test
+checkout:
+  post:
+    - mv config/secrets.example.json config/secrets.json
 dependencies:
   override:
     - npm install
